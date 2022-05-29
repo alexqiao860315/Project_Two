@@ -1,0 +1,20 @@
+Sat May 28 09:59:23 NZST 2022 : Apache Derby ????? - 10.14.2.0 - (1828579) ?????????? 1527 ????
+----------------------------------------------------------------
+Sat May 28 09:59:32 NZST 2022:
+????????? jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a ?????
+?? C:\Users\Demo\homework\MyProject\Project_two_db ?? Derby ?? The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579) ?? a816c00e-0181-0788-03d1-ffff96b7ff01
+?? file:/C:/Users/Demo/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar ??
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.10+8-LTS-162
+user.dir=C:\Users\Demo\Downloads\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Demo\homework\MyProject
+??????????? - derby.database.classpath=''
+----------------------------------------------------------------
+Sun May 29 23:15:07 NZST 2022????? Derby ??
+----------------------------------------------------------------
+Sun May 29 23:15:07 NZST 2022:
+????????? jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a ??????? C:\Users\Demo\homework\MyProject\Project_two_db ???? a816c00e-0181-0788-03d1-ffff96b7ff01
+----------------------------------------------------------------
