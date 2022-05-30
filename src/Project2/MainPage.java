@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Project2;
 
 /**
@@ -10,6 +6,12 @@ package Project2;
  */
 public class MainPage {
     public static void main(String[] args) {
+        //JFrame class test area
+        
         new Login().setVisible(true);
+        //new HomePage().setVisible(true);
+        //InfoStudent project = new InfoStudent();
+        //ExtraInfo extra = new ExtraInfo();
     }
+
 }
