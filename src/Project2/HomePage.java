@@ -288,7 +288,7 @@ private JFrame frame;
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         new InfoStudent();
-        
+        setVisible(false);        
     }//GEN-LAST:event_nextActionPerformed
 
     /**

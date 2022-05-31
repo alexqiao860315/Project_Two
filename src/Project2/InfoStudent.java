@@ -73,6 +73,7 @@ public class InfoStudent implements ActionListener {
          Object source = e.getSource();
          if(source == NextButton){
             new ExtraInfo();
+            Info.setVisible(false);
          }
          if(source == SaveButton){
              
