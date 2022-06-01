@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 public class AddtionalQuery implements ActionListener {
+    //define
     JFrame Info = new JFrame("Additonal Query");
     
     JLabel Add = new JLabel("Addtional Query", SwingConstants.CENTER);
@@ -27,12 +28,13 @@ public class AddtionalQuery implements ActionListener {
     JButton ClearButton = new JButton("Clear");
     JPanel ButtonPanelUpper = new JPanel();
     JPanel ButtonPanelDown = new JPanel();
-    
+    //connect db
     Connection con = dbconnect.connectdb();
     PreparedStatement ps = null;
     ResultSet rs = null;
     
     AddtionalQuery(){
+        //constructor
         dbconnect.connectdb(); 
         
         Add.setFont(new Font("Serif", Font.BOLD, 40));
@@ -44,16 +46,16 @@ public class AddtionalQuery implements ActionListener {
         ButtonPanelDown.add(SaveButton);
         ButtonPanelDown.add(ClearButton);
         Info.add(ButtonPanelDown, BorderLayout.SOUTH);
-        
+        //call ActionListener
         NextButton.addActionListener(this);
         SaveButton.addActionListener(this);
         ClearButton.addActionListener(this);
-        
+        //set up page
         Info.setSize(600, 400);
         Info.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Info.setVisible(true);
     }
-
+    //ActionListener method
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();

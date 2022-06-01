@@ -80,6 +80,7 @@ public class InfoStudent implements ActionListener {
              try {
                  String sql = "insert into STUDENT values(?, ?, ?, ?, ?)";
                  
+                 //save all collected datas into corresponding varibles in the table of database.
                  PreparedStatement pstmt = con.prepareStatement(sql);
                  pstmt.setString(1,IDTextField.getText());
                  pstmt.setString(2,NameTextField.getText());

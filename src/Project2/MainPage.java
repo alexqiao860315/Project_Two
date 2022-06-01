@@ -2,14 +2,15 @@ package Project2;
 
 /**
  *
- * @author Demo
+ * @Wen Qiao
  */
 public class MainPage {
     public static void main(String[] args) {
         //JFrame class test area
+             
+        /*Username: pdc  Password: pdc */
+        LoginPage login = new LoginPage(); 
         
-        
-        LoginPage login = new LoginPage();
         //new HomePage().setVisible(true);
         //InfoStudent project = new InfoStudent();
         //ExtraInfo extra = new ExtraInfo();

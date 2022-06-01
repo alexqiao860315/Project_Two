@@ -1,7 +1,7 @@
 package Project2;
 
 /* 
-
+Login page
 */
 
 import java.awt.BorderLayout;
@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class LoginPage implements ActionListener {
+/*define*/
     JFrame Info = new JFrame("AUT Course Selection System");
     
     JLabel StudentID = new JLabel("AUT Course Selection System");
@@ -35,14 +36,17 @@ public class LoginPage implements ActionListener {
     JPanel ButtonPanelUpper = new JPanel();
     JPanel MiddlePanelUpper = new JPanel();
     JPanel ButtonPanelDown = new JPanel();
-    
+
+/*connect db*/    
     Connection con = dbconnect.connectdb();
     PreparedStatement ps = null;
     ResultSet rs = null;
     
+/*constructor*/   
     LoginPage(){
         dbconnect.connectdb();   
-        
+    
+/*set up 3 panels that displayed north, center and south of the frame, add all the functions to the panels*/
         StudentID.setFont(new Font("Serif", Font.BOLD, 28));
         ButtonPanelUpper.add(StudentID);
         Info.add(ButtonPanelUpper);
@@ -64,11 +68,13 @@ public class LoginPage implements ActionListener {
         Info.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Info.setVisible(true);
         
+/*call ActionListener*/    
         LoginButton.addActionListener(this);
         ResetButton.addActionListener(this);
         
-    }   
-
+    }
+    
+/*ActionListener method*/
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
@@ -78,10 +84,11 @@ public class LoginPage implements ActionListener {
             ps = con.prepareStatement(login);
             ps.setString(1, UserTextField.getText());
             ps.setString(2, PassTextField.getText());
-            rs = ps.executeQuery();
+            rs = ps.executeQuery(); /*when input text, need to compare with db datas*/
 
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Successfull!");
+                //call another JFrame and dispose original JFrame when login success
                 new HomePage().setVisible(true);
                 Info.setVisible(false);
             }else{
