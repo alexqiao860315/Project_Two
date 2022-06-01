@@ -60,12 +60,14 @@ public class AddtionalQuery implements ActionListener {
         if(source == NextButton){
             new EndPage();
             Info.setVisible(false);
+            
+            // Close database
             try{
                 con.close();
             }catch(Exception ex){
                 JOptionPane.showMessageDialog(null,ex);
             }
-            // Close database
+            
         }
         if(source == SaveButton){
             try{
