@@ -8,7 +8,7 @@ public class MainPage {
     public static void main(String[] args) {
         //JFrame class test area
              
-        /*Username: pdc  Password: pdc */
+        /*Username: pdc  Password: pdc or Username: alex password: 0315*/
         LoginPage login = new LoginPage(); 
         
         //new HomePage().setVisible(true);
