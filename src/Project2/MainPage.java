@@ -15,6 +15,7 @@ public class MainPage {
         //InfoStudent project = new InfoStudent();
         //ExtraInfo extra = new ExtraInfo();
         //StudyInfo Study = new StudyInfo();
+        //StudyInfo2 Study2 = new StudyInfo2();
         //AddtionalQuery quesy = new AddtionalQuery();
         //EndPage end = new EndPage();
     }

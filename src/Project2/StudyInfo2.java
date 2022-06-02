@@ -16,22 +16,23 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class StudyInfo implements ActionListener {
+public class StudyInfo2 implements ActionListener {
     JFrame Info = new JFrame("Study Information");
     
     ButtonGroup group = new ButtonGroup();
     ButtonGroup group1 = new ButtonGroup();
     ButtonGroup group2 = new ButtonGroup();
     ButtonGroup group3 = new ButtonGroup();
-    JRadioButton Disable = new JRadioButton("Disable"); 
-    JRadioButton NoDisable = new JRadioButton("Not Disable");
-    JRadioButton Online = new JRadioButton("Online Study"); 
-    JRadioButton NoOnline = new JRadioButton("Not Online Study");
-    JRadioButton Overseas = new JRadioButton("Overseas"); 
-    JRadioButton NoOverseas = new JRadioButton("Not Overseas");
-    JRadioButton StudentLoan = new JRadioButton("Student Loan"); 
-    JRadioButton NoStudentLoan = new JRadioButton("No Student Loan");
+    JRadioButton Disable = new JRadioButton("TOEFL"); 
+    JRadioButton NoDisable = new JRadioButton("IELTS");
+    JRadioButton Online = new JRadioButton("Local"); 
+    JRadioButton NoOnline = new JRadioButton("International");
+    JRadioButton Overseas = new JRadioButton("Crimal Record"); 
+    JRadioButton NoOverseas = new JRadioButton("No Criminal Record");
+    JRadioButton StudentLoan = new JRadioButton("Currently Working"); 
+    JRadioButton NoStudentLoan = new JRadioButton("Not Working");
     JComboBox<String> Cam = new JComboBox(); 
+    JComboBox<String> Cam2 = new JComboBox(); 
     JButton NextButton = new JButton("Next");
     JButton SaveButton = new JButton("Save");
     JPanel PanelUpper = new JPanel();
@@ -41,7 +42,7 @@ public class StudyInfo implements ActionListener {
     PreparedStatement ps = null;
     ResultSet rs = null;
     
-    StudyInfo(){
+    StudyInfo2(){
         dbconnect.connectdb();
         
         PanelUpper.setLayout(new GridLayout(5, 5));
@@ -68,31 +69,44 @@ public class StudyInfo implements ActionListener {
         PanelUpper.add(NoStudentLoan);
         
         PanelUpper.add(Cam);
+        PanelUpper.add(Cam2);
         //add combo box
-        Cam.addItem("City Campus");
-        Cam.addItem("South Campus");
+        Cam.addItem("First year");
+        Cam.addItem("Second year");
+        Cam.addItem("Third year");
+        Cam.addItem("Postgraduate");
+        Cam.addItem("Master");
+        Cam.addItem("PHD");
+        Cam2.addItem("Buddhist");
+        Cam2.addItem("Taoism");
+        Cam2.addItem("Islam");
+        Cam2.addItem("Hinduism");
+        Cam2.addItem("Christianty");
+        Cam2.addItem("Catholicism");
+        Cam2.addItem("Atheist");
         Info.add(PanelUpper, BorderLayout.NORTH);
         PanelDown.add(NextButton);        
         PanelDown.add(SaveButton);
         Info.add(PanelDown, BorderLayout.SOUTH);
         
-        
+        //call ActionListener
         NextButton.addActionListener(this);
         SaveButton.addActionListener(this);
         
         Info.pack();
-        Info.setSize(500, 200);
+        Info.setSize(600, 200);
         Info.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Info.setVisible(true);
+        
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if(source == SaveButton){     
+        if(source == SaveButton){
             try {
-                String sql = "insert into STUDYINFO values(?, ?, ?, ?, ?)";
+                String sql = "insert into STUDYINFO2 values(?, ?, ?, ?, ?, ?)";
                 PreparedStatement pstmt = con.prepareStatement(sql);
                 
                 String health = null;
@@ -133,8 +147,11 @@ public class StudyInfo implements ActionListener {
                 pstmt.setString(4, payment);
                 //store combo box message into db
                 String Ca;
+                String Ca2;
                 Ca = Cam.getSelectedItem().toString();
                 pstmt.setString(5, Ca);
+                Ca2 = Cam.getSelectedItem().toString();
+                pstmt.setString(6, Ca2);
                 
                 pstmt.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Insection Successful!");
@@ -142,11 +159,11 @@ public class StudyInfo implements ActionListener {
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,ex);
             }
+         
         }
         if(source == NextButton){
-            new StudyInfo2();
+            new AddtionalQuery();
             Info.setVisible(false);
         }
     }
-    
 }

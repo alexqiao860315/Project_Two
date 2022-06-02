@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//db connection class, set up db connection method
 public class dbconnect {
     public static Connection connectdb(){
         Connection con = null;

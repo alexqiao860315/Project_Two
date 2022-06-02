@@ -80,6 +80,7 @@ public class ExtraInfo implements ActionListener {
             Info.setVisible(false);
         }
         if(source == InputButton){
+            //store from text area to db with correct display.
             TextArea.append("Phone Number: " + PhTextField.getText() + "\nEmail: " + EmTextField.getText() + "\nHobby: " + HoTextField.getText() + "\nPreperred Lecturer: " + PrTextField.getText());
         }
         if(source == SaveButton){
